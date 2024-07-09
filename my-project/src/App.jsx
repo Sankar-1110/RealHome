@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import { About } from './pages/about.jsx'
 import { Home } from './pages/Home.jsx'
@@ -29,7 +28,6 @@ function App() {
     <Route path='/profile' element={<Profile/>}/>
     <Route path='/create-list' element={<Create_list/>}/>
     <Route path='/update-list/:listingId' element={<Update_list/>}/>
-
     </Route>
 
    </Routes>
