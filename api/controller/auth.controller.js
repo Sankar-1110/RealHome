@@ -43,7 +43,7 @@ export const google=async(req,res,next)=>{
         }
         const token=jwt.sign({id:user._id},process.env.JWT_SECRET);
         const {password:pass,...rest}=user._doc;
-       console.log(rest);
+       
         res.cookie('access_token',token,{httpOnly:true}).status(200).json(rest);          
       }
       else{
@@ -53,10 +53,10 @@ export const google=async(req,res,next)=>{
        await newuser.save();
        const token=jwt.sign({id:newuser._id},process.env.JWT_SECRET);
        const {password:pass,...rest}=newuser._doc;
-       console.log(rest);
+       
        res.cookie('access_token',token,{httponly:true}).status(200).json(rest);
       }}catch(error){
-        console.log(error);
+       
         next(error);
       }
 }
