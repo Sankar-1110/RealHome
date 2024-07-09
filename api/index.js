@@ -23,7 +23,7 @@ app.use(express.static(path.join(path.resolve(), 'my-project/dist')));
 
 // Anything that doesn't match the API routes should be handled by the React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(path.resolve(), '/my-project/dist', '/index.html'));
+  res.sendFile(path.join(path.resolve(), 'my-project/dist', 'index.html'));
 });
 
 app.use((err,req,res,next)=>{
