@@ -1,4 +1,5 @@
 {
+  "homepage":"https://Sankar-1110.github.io/RealHome",
   "name": "mearn-home",
   "version": "1.0.0",
   "description": "",
@@ -6,9 +7,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy":"npm run build --prefix my-project",
+    "deploy":"gh-pages -d my-project/dist",
     "dev": "nodemon api/index.js",
     "start": "node api/index.js",
-    "build": "npm install && npm install --prefix my-project && npm run build --prefix my-project"
+    "build": "npm install && npm run build --prefix my-project"
   },
   "keywords": [],
   "author": "",
