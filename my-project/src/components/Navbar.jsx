@@ -49,11 +49,16 @@ export default function Navbar() {
             <button >
             <FaSearch className='text-[#002147]' /></button>
         </form>
-        <ul className=' hidden w-[300px] items-center sm:flex justify-between text-md text-[#3d6797]  p-2 font-semibold '>
-        <Link to="/"> <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] hover:text-white bg-white p-2 rounded-2xl transition duration-300  '>Home</li></Link>
-        <Link to="/about"> <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] hover:text-white   bg-white p-2 rounded-2xl transition duration-300'>About</li></Link>
+        <ul className=' hidden w-[300px] items-center sm:flex justify-between text-md text-[#3d6797]   p-2 font-semibold '>
+        <Link to="/"> <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] hover:text-white bg-white p-2 rounded-2xl transition duration-500 hover:font- '>Home</li></Link>
+        <Link to="/about">
+  <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] bg-white p-2 rounded-2xl transition duration-500 hover:text-white'>
+    About
+  </li>
+</Link>
+
         <Link to="/profile">{currentUser?<img src={currentUser.avatar} className='h-8 rounded-full'/>:
-        <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] hover:text-white transition duration-300 bg-white p-2 rounded-2xl'>SignIn</li>}
+        <li className='hover:underline underline-offset-4 hover:bg-[#4b7cb4] hover:text-white transition duration-500 bg-white p-2 rounded-2xl'>SignIn</li>}
         </Link>
         </ul>
         <button onClick={()=>setSideBar(!sideBar)} className='sm:hidden mx-3'>{sideBar?<FaTimes className='text-white text-lg'/>:<FaBars className='text-white text-lg'/>}</button>
