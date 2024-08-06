@@ -14,6 +14,9 @@ mongoose.connect(process.env.URI).then(()=>{
     console.log("database connected succesfully");
     app.listen(3000,(req,res)=>{
     console.log("server is running on port 3000");})
+}).catch((error)=>{
+    console.error("Database connection failed:", error.message);
+
 })
 app.use("/api/auth",authRouter);   
 app.use("/api/user",userRouter);    
