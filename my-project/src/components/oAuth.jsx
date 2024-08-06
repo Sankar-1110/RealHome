@@ -41,6 +41,6 @@ export default function Auth() {
   
   
   return (
-    <button onClick={handleGoogleAuth} type='button' className='text-white bg-red-700 rounded-lg p-3'>Auth</button>
+    <button onClick={handleGoogleAuth} type='button' className='text-white bg-red-700 rounded-lg p-3'> GOOGLE</button>
   )
 }
