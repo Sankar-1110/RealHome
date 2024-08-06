@@ -22,7 +22,7 @@ const [fileUploadErr,setFiUplErr]=useState(false);
   const[formData,setFormdata]=useState({})
   const[updateSucc,setUpdateSucc]=useState(false)
   const[listingErr,setListingErr]=useState('');
-  const {currentUser,loading,error}=useSelector((state)=>state.user)
+  const {currentUser,loading}=useSelector((state)=>state.user)
   const[file,setFile]=useState(undefined)
   const [Totlistings,setTotlistings]=useState('');
 const navigate=useNavigate();
@@ -177,7 +177,7 @@ method:'DELETE'
       <p className='hover:text-red-600 cursor-pointer  font-semibold'onClick={handleDeleteUser}>Delete account</p>
       <p className='hover:text-red-600 cursor-pointer font-semibold'onClick={handleSignOut}>Signout</p>
       </div>
-     {error?<p className='my-3 text-red-700 font-semibold text-center'>{error}</p>:null}
+     {/* {error?<p className='my-3 text-red-700 font-semibold text-center'>{error}</p>:null} */}
      {updateSucc?<p className='my-3 text-green-700 font-semibold text-center'>Updated successfully!</p>:null}
       
       <p onClick={GetListings} className='text-center font-semibold text-green-700 hover:text-green-600'>Show Listings</p>

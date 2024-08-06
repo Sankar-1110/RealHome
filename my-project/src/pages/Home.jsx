@@ -10,13 +10,16 @@ export const Home=()=>{
   const [offerListings,setOfferListings]=useState([])
   const [saleListings,setSaleListings]=useState([])
   const [rentListings,setRentListings]=useState([])
+  const [loadingPage,setLoadingPage]=useState(false)
   SwiperCore.use([Navigation])
   console.log(saleListings);
   useEffect(()=>{
     const fetchofferListings=async()=>{
       try{
+        setLoadingPage(true)
         const res=await fetch(`/api/listing/get?offer=true&limit=4`)
         const data=await res.json()
+        console.log("Offer Listings Data:", data);
         setOfferListings(data)
         fetchRentListings();
       }catch(error){
@@ -38,7 +41,7 @@ export const Home=()=>{
         const res=await fetch(`/api/listing/get?type=sale&limit=4`)
         const data=await res.json()
         setSaleListings(data)
-        
+        setLoadingPage(false);
       }catch(error){
         console.log(error);
       }
@@ -48,8 +51,11 @@ export const Home=()=>{
   },[])
 
     return(
+
         <div>
          {/* top */}
+         {loadingPage?<h1 className="text-center font-semibold text-lg text-green-700">Loading...please wait!</h1>:
+
          <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
           <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">Find your next <span className="text-slate-500">perfect</span>
           <br/>place with ease</h1>
@@ -61,7 +67,7 @@ export const Home=()=>{
             </Link>
           </div>
          </div>
-         
+}
          {/* swiper */}
          <Swiper navigation>
          {
