@@ -50,7 +50,7 @@ export const SignUp=()=>{
         }
     }
     return(
-        <div className=" my-5 p-3 max-w-lg  mx-auto">
+        <div className=" mt-32 p-3 max-w-lg  mx-auto">
             {iferror?
             <div className=" p-3 bg-red-700 text-white font-medium">
                 {error}

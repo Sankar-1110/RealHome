@@ -155,7 +155,7 @@ method:'DELETE'
     }
   }
   return (
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mt-20 mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <form onSubmit={handleSubmit} action="" className='flex flex-col gap-4'>
         <input type="file" hidden accept='

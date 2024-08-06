@@ -104,8 +104,8 @@ setLoading(false)
     }
 };
   return (
-    <div className='flex flex-col md:flex-row'>
-         <div className='p-7 w-full md:max-w-96  border-b-2 md:border-r-2  md:min-h-screen'>
+    <div className='flex flex-col md:flex-row mt-24'>
+         <div className='p-7 w-full md:max-w-96   md:min-h-screen'>
         <form onSubmit={handleSubmit} action="" className='flex w-full flex-col gap-8' >
             <div className='flex items-center gap-2'>
                 <label className='whitespace-nowrap font-semibold'>Search Term:</label>

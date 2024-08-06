@@ -5,7 +5,7 @@ import 'swiper/css/bundle';
 import SwiperCore from 'swiper';
 import { Navigation } from "swiper/modules";
 import Listingitem from "../components/Listingitem";
-
+import houseimg from '../image/houseimg.jpg'
 export const Home=()=>{
   const [offerListings,setOfferListings]=useState([])
   const [saleListings,setSaleListings]=useState([])
@@ -52,24 +52,29 @@ export const Home=()=>{
 
     return(
 
-        <div>
+        <div className="mt-20 relative">
          {/* top */}
-         {loadingPage?<h1 className="text-center font-semibold text-lg text-green-700">Loading...please wait!</h1>:
-
-         <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
-          <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">Find your next <span className="text-slate-500">perfect</span>
+         <div className=" h-[350px] sm:h-[500px]  md:h-[600px]  mx-auto ">
+         <div  className=" flex flex-col  gap-6 p-28 px-3 max-w-6xl mx-auto z-10 relative top-0   sm:top-24 ">
+          <h1 className="text-white font-bold text-3xl md:text-5xl lg:text-6xl">Find your next <span className="text-white">perfect</span>
           <br/>place with ease</h1>
-          <div className="text-gray-600 text-xs font-semibold sm:text-sm">
+          <div className="text-white text-xs font-semibold sm:text-base">
             RealHome is the best place to find your next perfect place to live
             <br/>
-            <Link className="text-xs sm;text-sm text-blue-700 font-bold hover:underline" to={`/search`}>
+            <Link className="text-base sm:text-base text-blue-500 font-bold hover:underline" to={`/search`}>
             Let's get started
             </Link>
           </div>
          </div>
-}
+         <div  className=" w-full absolute top-0 ">
+            <img className="h-[350px] sm:h-[500px] md:h-[600px]  w-full  "src={houseimg} alt="homeimg" />
+            <div className="absolute inset-0 bg-black bg-opacity-70 "></div> 
+         </div>
+         </div>
+         
+
          {/* swiper */}
-         <Swiper navigation>
+         {/* <Swiper navigation >
          {
           offerListings&& offerListings.length>0&&offerListings.map((listing)=>(
      <SwiperSlide key={listing._id}>
@@ -77,7 +82,7 @@ export const Home=()=>{
      </SwiperSlide>
           ))
          }
-         </Swiper>
+         </Swiper> */}
          {/* listing results for offer,sale and rent */}
 <div className="max-w-full mx-auto p-3 flex flex-col gap-8 my-10">
 {offerListings&& offerListings.length>0&&(
@@ -96,6 +101,17 @@ export const Home=()=>{
     </div>
   </div>
 )}
+</div>
+<Swiper navigation >
+         {
+          offerListings&& offerListings.length>0&&offerListings.map((listing)=>(
+     <SwiperSlide key={listing._id}>
+      <div  style={{background:`url(${listing.imageUrls[0]}) center no-repeat`,backgroundSize:'cover'}} className=" h-[300px] sm:h-[650px] "></div>
+     </SwiperSlide>
+          ))
+         }
+         </Swiper>
+<div className="max-w-full mx-auto p-3 flex flex-col gap-8 my-10">
 {rentListings&& rentListings.length>0&&(
   <div>
     <div className="my-3">
@@ -129,6 +145,7 @@ export const Home=()=>{
   </div>
 )}
 </div>
+
         </div>
     )
 }

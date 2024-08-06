@@ -161,7 +161,7 @@ export default function Create_list() {
   };
   
   return (
-    <main className='overflow-x-hidden'>
+    <main className='overflow-x-hidden mt-28'>
   <h1 className='text-center font-semibold text-[30px]'>Create List</h1>
   <br />
   <form className='flex flex-col p-2 sm:flex-row sm:w-4xl max-w-5xl mx-auto '>

@@ -1,6 +1,6 @@
 export const About=()=>{
 return(
-    <div className="px-4 sm:px-56 my-4 sm:mt-12">
+    <div className="px-4 sm:px-10 md:px-40 lg:px-56 mt-28 sm:mt-32">
       <h1 className="text-2xl sm:text-4xl text-slate-600 font-bold">About Real Home</h1>
       <br/>
      <p className="text-slate-600 font-semibold">

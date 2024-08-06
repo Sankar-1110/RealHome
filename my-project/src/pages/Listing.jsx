@@ -47,7 +47,7 @@ export default function Listing() {
         },[params.listingId])
   return (
     
-    <main>
+    <main className='mt-24'>
 {error?<p className='
 text-center'>Something went wrong</p>:null}
 {loading?<p className='text-center'>Loading...</p>:null}

@@ -47,7 +47,7 @@ export const Signin=()=>{
     }
 
     return(
-        <div className="max-w-lg my-4  mx-auto px-2">
+        <div className="max-w-lg my-40  mx-auto px-2">
            <h1 className="text-center font-semibold text-3xl">SignIn</h1>
            <form action="" className="flex flex-col my-5 gap-4" onSubmit={submitInhandle}>
             <input type="email"   
