@@ -37,7 +37,7 @@ export default function Navbar() {
   }, [sideBar]);
   return (
     <header className='w-lvw   fixed top-0 z-20  '>
-        <div className=' w-full bg-opacity-30 bg-[#496683] backdrop-blur-md flex items-center p-2 justify-evenly  '>
+        <div className=' w-full bg-opacity-30 bg-[#064381] backdrop-blur-md flex items-center p-2 justify-evenly  '>
           <Link to={'/'}>
         <h1 className='font-bold font-md flex text-sm sm:text-xl bg-white rounded-lg p-2'>
         <span className='text-[#3d6797] text-lg'>Real</span>
@@ -64,7 +64,7 @@ export default function Navbar() {
         <button onClick={()=>setSideBar(!sideBar)} className='sm:hidden mx-3'>{sideBar?<FaTimes className='text-[#164b8b] text-lg'/>:<FaBars className='text-[#164b8b] text-lg'/>}</button>
         </div>
       
-      <div className={`sm:hidden relative  bg-opacity-70 z-10 backdrop-blur-md bg-[#c9e1fa] w-full  ${sideBar?'visible':'hidden'}`}>
+      <div className={`sm:hidden relative  bg-opacity-70 z-10 backdrop-blur-md bg-transparent w-full  ${sideBar?'visible':'hidden'}`}>
       <ul className={` w-full flex flex-col   justify-center items-center  gap-8  p-2 font-semibold relative z-0`}>
       <Link to="/"> <li onClick={()=>setSideBar(!sideBar)} className='border-2 border-[#164b8b] bg-white text-lg text-[#164b8b]  p-2 rounded-2xl  '>Home</li></Link>
       <Link to="/about"> <li onClick={()=>setSideBar(!sideBar)} className='border-2 border-[#164b8b] bg-white text-lg text-[#164b8b]  p-2 rounded-2xl '>About</li></Link>
