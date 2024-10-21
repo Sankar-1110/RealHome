@@ -4,6 +4,7 @@ import {app} from '../firebase.js';
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice.js';
 import { useNavigate } from 'react-router-dom';
+import googleicon from '../image/googleicon.png'
 export default function Auth() {
   const dispatch=useDispatch();
   const navigate=useNavigate();
@@ -41,6 +42,6 @@ export default function Auth() {
   
   
   return (
-    <button onClick={handleGoogleAuth} type='button' className='text-white bg-red-700 rounded-lg p-3'> GOOGLE</button>
+    <button onClick={handleGoogleAuth} type='button' className='text-white rounded-lg  flex items-center justify-center border-2 border-gray-300 '> <img className='w-10 h-10'src={googleicon} alt="" />  </button>
   )
 }

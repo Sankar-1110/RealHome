@@ -74,7 +74,7 @@ try{
     const sort=req.query.sort||'createdAt';
     const order=req.query.order||'desc'
     const listings=await Listing.find({
-     name:{$regex:searchTerm,$options:'i'},
+     address:{$regex:searchTerm,$options:'i'},
      offer,furnished,parking,type
     }).sort(
      {[sort]:order}

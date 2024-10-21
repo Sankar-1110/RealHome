@@ -86,6 +86,9 @@ const navigate=useNavigate();
     return;
    }
    setUpdateSucc(true)
+   setTimeout(() => {
+    setUpdateSucc(false)
+   }, 3000);
    dispatch(UpdateprofileSuccess(data))
     }catch(error){
       dispatch(UpdateprofileFail(error.message))
@@ -155,7 +158,7 @@ method:'DELETE'
     }
   }
   return (
-    <div className='p-3 max-w-lg mt-20 mx-auto'>
+    <div className='max-w-md my-20  mx-auto p-5 rounded-xl bg-white shadow-2xl shadow-blue-400'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <form onSubmit={handleSubmit} action="" className='flex flex-col gap-4'>
         <input type="file" hidden accept='
@@ -163,14 +166,14 @@ method:'DELETE'
         <img src={formData.avatar|| currentUser.avatar} onClick={(e)=>fileRef.current.click()}alt=""className='rounded-full h-24 w-24 object-cover curser-pointer self-center' />
         {fileUploadErr?<span className='text-red-700 font-semibold  text-center'>Upload failed!</span>:filePer>0 && filePer<100 ?(
           <span className='text-green-700 font-semibold  text-center'>{`Uploaded ${filePer}%`}</span>
-        ):filePer===100?<span className='text-green-700 font-semibold  text-center'>Uploaded Successfully!</span>:null}
-        <input id='username' type="text " placeholder='username'className='border p-3 rounded-lg bg-slate-200 border-slate-400'defaultValue={currentUser.username} onChange={handleChange}/>
+        ):filePer===100?<span className='text-green-700 font-semibold  text-center'>Click update button!</span>:null}
+        <input id='username' type="text " placeholder='username'className=' p-3 rounded-lg shadow-md focus:outline-none focus:shadow-blue-400 'defaultValue={currentUser.username} onChange={handleChange}/>
         <input id='email' type="text " placeholder='email'onChange={handleChange}
-        className='border p-3 rounded-lg bg-slate-200 border-slate-400'defaultValue={currentUser.email} />
-        <input id='password' type="password" placeholder='password'onChange={handleChange}
-        className='border p-3 rounded-lg bg-slate-200 border-slate-400'defaultValue={currentUser.password} />
-        <button type='submit' className='bg-green-700 text-white p-3 rounded-lg hover:opacity-95'onClick={handleSubmit}>{loading?'Loading...':'Update'}</button>
-        <Link className='bg-slate-700 text-white p-3 rounded-lg hover:opacity-95 text-center' to={'/create-list'}>
+        className=' p-3 rounded-lg shadow-md focus:outline-none hover:shadow-blue-400 'defaultValue={currentUser.email} />
+        <input id='password' type="password" placeholder='password (you can update your password)'onChange={handleChange}
+        className=' p-3 rounded-lg shadow-md focus:outline-none shadow-blue-400 'defaultValue={currentUser.password} />
+        <button type='submit' className=' bg-gradient-to-r from-green-400 to-green-700 text-white font-bold py-2 px-4 rounded text-center 'onClick={handleSubmit}>{loading?'Loading...':'Update'}</button>
+        <Link className=' bg-gradient-to-r from-blue-400 to-blue-700 text-white font-bold py-2 px-4 rounded text-center ' to={'/create-list'}>
         <button type='button' >{loading?'Loading...':'Create List'}</button></Link>
       </form>
       <div className='mx-auto flex justify-between text-red-700 my-2'>

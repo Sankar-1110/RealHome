@@ -161,7 +161,7 @@ export default function Create_list() {
   };
   
   return (
-    <main className='overflow-x-hidden mt-28'>
+    <main className='overflow-x-hidden mt-28 '>
   <h1 className='text-center font-semibold text-[30px]'>Create List</h1>
   <br />
   <form className='flex flex-col p-2 sm:flex-row sm:w-4xl max-w-5xl mx-auto '>
@@ -169,7 +169,7 @@ export default function Create_list() {
       <input
         onChange={handlechange}
         value={formData.name}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-slate-400  border-2 focus:shadow-md '
         type='text'
         id='name'
         placeholder='Name'required
@@ -177,7 +177,7 @@ export default function Create_list() {
       <textarea
         onChange={handlechange}
         value={formData.description}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-slate-400 border-2 focus:shadow-md '
         type='text'
         id='description'
         placeholder='Description'required
@@ -185,7 +185,7 @@ export default function Create_list() {
       <input
         onChange={handlechange}
         value={formData.address}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-gray-400 border-2 focus:shadow-md '
         type='text'
         id='address'
         placeholder='Address'required
@@ -243,7 +243,7 @@ export default function Create_list() {
         </div>
       </div>
       <div className='flex flex-wrap gap-3'>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.bedrooms}
@@ -255,7 +255,7 @@ export default function Create_list() {
           />
           <span>Beds</span>
         </div>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.bathrooms}
@@ -267,7 +267,7 @@ export default function Create_list() {
           />
           <span>Baths</span>
         </div>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.regularprice}
@@ -314,7 +314,7 @@ export default function Create_list() {
       <div className='flex gap-4 flex-wrap '>
         <div className='p-2 border border-slate-700 rounded-lg '>
           <input
-            className='rounded-sm w-full'
+            className='rounded-sm w-full '
             onChange={(e) => {
               setFiles(e.target.files);
             }}
@@ -327,7 +327,7 @@ export default function Create_list() {
         <button
           type='button'
           onClick={handleinputimg}
-          className='border border-green-600 text-green-600 px-4 rounded-lg hover:text-green-700'
+          className='border border-green-600 text-green-600 px-4 rounded-lg hover:bg-green-700 hover:text-white'
         >
           {imgloading ? 'Uploading..' : 'Upload'}
         </button>
@@ -354,7 +354,7 @@ export default function Create_list() {
       disabled={loading||imgloading}
         onClick={handleSubmit}
         type='submit'
-        className='p-3 bg-slate-600 rounded-lg text-white disabled:opacity-85'
+        className='bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-2 px-4 rounded'
       >
         {loading ? 'Loading...' : 'Create List'}
       </button>

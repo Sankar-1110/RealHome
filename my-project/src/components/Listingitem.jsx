@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {MdLocationOn} from 'react-icons/md';
 export default function Listingitem({listing}) {
   return (
-    <div className='bg-white border hover:border-slate-400  border-solid   rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden w-full  sm:h-auto sm:w-[330px]'>
+    <div className='bg-white border hover:border-slate-400  border-solid   rounded-lg  shadow-sm  hover:shadow-2xl  transition-shadow overflow-hidden w-full  sm:h-auto sm:w-[330px]'>
         <Link to={`/listing/${listing._id}`}>
         <img className='h-[220px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300' src={listing.imageUrls[0]} alt="listing-cover" />
         <div className='flex flex-col gap-2 p-3'>

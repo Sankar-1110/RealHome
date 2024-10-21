@@ -6,6 +6,7 @@ import SwiperCore from 'swiper';
 import { Navigation } from "swiper/modules";
 import Listingitem from "../components/Listingitem";
 import houseimg from '../image/houseimg.jpg'
+import Footer from "../components/Footer";
 export const Home=()=>{
   const [offerListings,setOfferListings]=useState([])
   const [saleListings,setSaleListings]=useState([])
@@ -145,6 +146,7 @@ export const Home=()=>{
   </div>
 )}
 </div>
+<Footer/>
 
         </div>
     )

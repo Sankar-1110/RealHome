@@ -186,7 +186,7 @@ const params=useParams();
       <input
         onChange={handlechange}
         value={formData.name}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-gray-400 border-2 focus:shadow-md '
         type='text'
         id='name'
         placeholder='Name'
@@ -194,7 +194,7 @@ const params=useParams();
       <textarea
         onChange={handlechange}
         value={formData.description}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-gray-400 border-2 focus:shadow-md '
         type='text'
         id='description'
         placeholder='Description'
@@ -202,7 +202,7 @@ const params=useParams();
       <input
         onChange={handlechange}
         value={formData.address}
-        className='outline-none p-3 rounded-lg'
+        className='p-3 rounded-lg shadow-md focus:outline-none hover:shadow-gray-400 border-2 focus:shadow-md '
         type='text'
         id='address'
         placeholder='Address'
@@ -260,7 +260,7 @@ const params=useParams();
         </div>
       </div>
       <div className='flex flex-wrap gap-3'>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.bedrooms}
@@ -272,7 +272,7 @@ const params=useParams();
           />
           <span>Beds</span>
         </div>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.bathrooms}
@@ -284,7 +284,7 @@ const params=useParams();
           />
           <span>Baths</span>
         </div>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 border-2 px-2'>
           <input
             onChange={handlechange}
             value={formData.regularprice}
@@ -372,7 +372,7 @@ const params=useParams();
       disabled={loading||imgloading}
         onClick={handleSubmit}
         type='submit'
-        className='p-3 bg-slate-600 rounded-lg text-white disabled:opacity-85'
+        className='bg-gradient-to-r from-green-500 to-green-700 text-white font-bold py-2 px-4 rounded'
       >
         {loading ? 'Loading...' : 'Update List'}
       </button>

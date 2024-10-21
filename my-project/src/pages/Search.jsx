@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import Listingitem from '../components/Listingitem';
+import Footer from '../components/Footer';
 export default function Search() {
     const [showMore,setShowmore]=useState(false)
 
@@ -104,8 +105,9 @@ setLoading(false)
     }
 };
   return (
-    <div className='flex flex-col md:flex-row mt-24'>
-         <div className='p-7 w-full md:max-w-96   md:min-h-screen'>
+    <div >
+        <div className='flex flex-col md:flex-row mt-24'>
+         <div className='p-7 w-full md:max-w-96 md:h-96 rounded-xl  bg-blue-200'>
         <form onSubmit={handleSubmit} action="" className='flex w-full flex-col gap-8' >
             <div className='flex items-center gap-2'>
                 <label className='whitespace-nowrap font-semibold'>Search Term:</label>
@@ -114,7 +116,7 @@ setLoading(false)
                 id='searchTerm'
                 placeholder='Search..'
                 className='
-                border rounded-lg p-3 w-full'
+                border rounded-lg p-3 w-full focus:outline-none'
                 value={sidebarData.searchTerm}
                 onChange={handleChange}
                 />
@@ -158,11 +160,10 @@ setLoading(false)
             <option  value="createdAt_desc">Latest</option>
             <option  value="createdAt_asc">Oldest</option>
             </select></div>
-            <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>Search</button>
+            <button className='bg-blue-500 text-white p-3 rounded-lg uppercase hover:opacity-95'>Search</button>
         </form>
         </div>
         <div>
-        <h1 className='text-3xl font-semibold px-3 '>Listing element</h1>
         <div className='flex flex-wrap gap-3 p-4'>
             {!loading&& listings.length===0&&
             <p className='text-xl text-slate-700'>No listings found!</p>
@@ -177,12 +178,15 @@ setLoading(false)
             ))}
        {showMore&&(
         <button type='
-        button' className='text-green-800 font-semibold text-center w-full  hover:text-green-700 hover:underline underline-offset-2' onClick={onShowmoreClick}>Show more</button>
+        button' className='text-green-800 p-2 text-lg font-bold text-center w-full  hover:text-green-700 hover:underline underline-offset-2' onClick={onShowmoreClick}>Show more</button>
        )}
             
             
         </div>
         </div>
+        </div>
+        
+        <Footer/>
     </div>
   )
 }
